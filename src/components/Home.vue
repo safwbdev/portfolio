@@ -4,6 +4,8 @@
         <div class="divider"></div>
         <SkillsSection />
         <div class="divider"></div>
+        <ProjectSection />
+        <div class="divider"></div>
         <div class="row">
             <div class="row col xl6 l6 m12 s12">
                 <ExperienceSection />
@@ -21,6 +23,7 @@
     import SkillsSection from './skills/SkillsSection'
     import EducationSection from './education/EducationSection'
     import ExperienceSection from './experience/ExperienceSection'
+    import ProjectSection from './projects/ProjectSection'
     export default {
         name: 'dashboard',
         components: {
@@ -28,6 +31,7 @@
             SkillsSection, 
             EducationSection, 
             ExperienceSection,
+            ProjectSection,
         },
         data() {
             return {}

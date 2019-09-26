@@ -11,6 +11,8 @@ import EditExperience from '@/components/experience/EditExperience'
 import NewEducation from '@/components/education/NewEducation'
 import ViewEducation from '@/components/education/ViewEducation'
 import EditEducation from '@/components/education/EditEducation'
+import ViewProject from '@/components/projects/ViewProject'
+import NewProject from '@/components/projects/NewProject'
 
 Vue.use(Router)
 
@@ -43,6 +45,11 @@ export default new Router({
       component: NewExperience
     },
     {
+      path: '/new-project',
+      name: 'new-project',
+      component: NewProject
+    },
+    {
       path: '/edit/:skill_id',
       name: 'edit-skill',
       component: EditSkill
@@ -71,6 +78,11 @@ export default new Router({
       path: '/view-education/:edu_id',
       name: 'view-education',
       component: ViewEducation
+    },
+    {
+      path: '/view-project/:project_id',
+      name: 'view-project',
+      component: ViewProject
     }
   ]
 })
