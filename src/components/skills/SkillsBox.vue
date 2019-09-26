@@ -4,8 +4,7 @@
             <h4>{{title}}</h4>
         </li>
         <li v-for="skill in skills" v-bind:key="skill.id" class="collection-item">
-            <div class="chip">{{skill.skill_type}}</div>
-            {{skill.skill_id}}:{{skill.skill_name}}
+            {{skill.skill_name}} | <div class="chip">{{skill.skill_type}}</div>
             <router-link class="secondary-content" v-bind:to="{name: 'view-skill',params: {skill_id: skill.skill_id}}">
                 <i class="fa fa-eye"></i>
             </router-link>
@@ -31,7 +30,7 @@
             }
         },
         created () {
-            db.collection('skills').orderBy('skill_id', 'asc').get().then(querysnapshot => {
+            db.collection('skills').orderBy('skill_name', 'asc').get().then(querysnapshot => {
                 querysnapshot.forEach(doc => {
                     // console.log(doc.id);
                     const data = {

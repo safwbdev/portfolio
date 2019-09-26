@@ -2,7 +2,7 @@
     <div class="section">
         <h5>Work Experience</h5>
         <div class="row">
-            <div v-for="work in experience" v-bind:key="work.id" class="row col xl12 l6 m12 s12">
+            <div v-for="work in experience" v-bind:key="work.id" class="row col xl12 l12 m12 s12">
                 <div>{{work.work_position}} | {{work.work_start}} - {{work.work_end}}</div>
                 <div>{{work.work_name}} | {{work.work_location}}</div>
                 <div>{{work.work_desc}}</div> 

@@ -55,14 +55,14 @@
 
                 selected: 'A',
                 options: [
-                { text: 'Essentials', value: 'Essentials' },
-                { text: 'Technical', value: 'Technical' },
-                { text: 'Framework', value: 'Framework' },
-                { text: 'CMS', value: 'CMS' },
-                { text: 'Database', value: 'Database' },
-                { text: 'Tools', value: 'Tools' },
-                { text: 'OS', value: 'OS' },
-                { text: 'Design', value: 'Design' },
+                    { text: 'Essentials', value: 'Essentials' },
+                    { text: 'Technical', value: 'Technical' },
+                    { text: 'Framework', value: 'Framework' },
+                    { text: 'CMS', value: 'CMS' },
+                    { text: 'Database', value: 'Database' },
+                    { text: 'Tools', value: 'Tools' },
+                    { text: 'OS', value: 'OS' },
+                    { text: 'Design', value: 'Design' },
                 ],
 
                 skill_id: null,

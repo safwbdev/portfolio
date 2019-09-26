@@ -28,8 +28,18 @@
                     <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
+                <h6>Tools</h6>
+                <span v-for="skill in tools" v-bind:key="skill.id" class=" purple lighten-4 chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
+                    {{skill.skill_name}}
+                </span>
                 <h6>Operating Systems</h6>
                 <span v-for="skill in os" v-bind:key="skill.id" class=" purple lighten-4 chip">
+                    <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
+                    {{skill.skill_name}}
+                </span>
+                <h6>Design</h6>
+                <span v-for="skill in design" v-bind:key="skill.id" class=" purple lighten-4 chip">
                     <fa-icon :icon="[skill.skill_icon[0], skill.skill_icon[1]]" /> | 
                     {{skill.skill_name}}
                 </span>
@@ -74,7 +84,7 @@ font-size: 1.2em;
             }
         },
         created () {
-            db.collection('skills').orderBy('skill_id').get().then(querysnapshot => {
+            db.collection('skills').orderBy('skill_id', 'asc').get().then(querysnapshot => {
                 querysnapshot.forEach(doc => {
                     // console.log(doc.id);
                     const data = {
@@ -98,14 +108,16 @@ font-size: 1.2em;
                             this.database.push(data);
                             break;
                         case "CMS":
-                            console.log(data);
                             this.cms.push(data);
                             break;
-                        case "Tool":
+                        case "Tools":
                             this.tools.push(data);
                             break;
                         case "OS":
                             this.os.push(data);
+                            break;
+                        case "Design":
+                            this.design.push(data);
                             break;
                         }
                         
