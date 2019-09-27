@@ -11,7 +11,7 @@
                 <div>{{edu.edu_start}} - {{edu.edu_end}}</div>
                 <div>{{edu.edu_desc}}</div> -->
                 <div>{{edu.edu_end}} | {{edu.edu_field}}</div>
-                <div>{{edu.edu_name}} | {{edu.edu_desc}}</div>
+                <div>{{edu.edu_name}} | {{edu.edu_location}}</div>
             </div>
         </div>
     </div>
@@ -39,7 +39,7 @@
                         'edu_field' : doc.data().edu_field,
                         'edu_start' : doc.data().edu_start,
                         'edu_end' : doc.data().edu_end,
-                        'edu_desc' : doc.data().edu_desc,
+                        'edu_location' : doc.data().edu_location,
                     }
                     this.education.push(data)
                 })

@@ -28,7 +28,7 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="edu_desc" required>
+                        <input type="text" v-model="edu_location" required>
                     </div>
                 </div>
                 <button type="submit" class="btn">Submit</button>
@@ -52,7 +52,7 @@
                 edu_field: null,
                 edu_start: null,
                 edu_end: null,
-                edu_desc: null,
+                edu_location: null,
             }
         },
         beforeRouteEnter (to,from,next) {
@@ -66,7 +66,7 @@
                         vm.edu_field = doc.data().edu_field
                         vm.edu_start = doc.data().edu_start
                         vm.edu_end = doc.data().edu_end
-                        vm.edu_desc = doc.data().edu_desc
+                        vm.edu_location = doc.data().edu_location
                     })
                 })
             })
@@ -85,7 +85,7 @@
                         this.edu_field = doc.data().edu_field
                         this.edu_start = doc.data().edu_start
                         this.edu_end = doc.data().edu_end
-                        this.edu_desc = doc.data().edu_desc
+                        this.edu_location = doc.data().edu_location
                     })
                 })
             },
@@ -100,7 +100,7 @@
                             edu_field: this.edu_field,
                             edu_start: this.edu_start,
                             edu_end: this.edu_end,
-                            edu_desc: this.edu_desc,
+                            edu_location: this.edu_location,
                         })
                         .then(() => {
                             this.$router.push({

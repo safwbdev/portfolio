@@ -5,7 +5,7 @@
             <li class="collection-item">ID#: {{edu_id}}</li>
             <li class="collection-item">Field: {{edu_field}}</li>
             <li class="collection-item">Duration: {{edu_start}} - {{edu_end}}</li>
-            <li class="collection-item">Description: {{edu_desc}}</li>
+            <li class="collection-item">Location: {{edu_location}}</li>
         </ul>
         <router-link to="/dashboard" class="btn grey">Back</router-link>
         <Button @click="deleteEmployee" to="/" class="btn red">Delete</Button>
@@ -31,6 +31,7 @@
                 edu_id: null,
                 edu_name: null,
                 edu_field: null,
+                edu_location: null,
             }
         },
         beforeRouteEnter (to,from,next) {
@@ -45,6 +46,7 @@
                         vm.edu_start = doc.data().edu_start
                         vm.edu_end = doc.data().edu_end
                         vm.edu_desc = doc.data().edu_desc
+                        vm.edu_location = doc.data().edu_location
                     })
                 })
             })

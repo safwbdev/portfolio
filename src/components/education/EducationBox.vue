@@ -5,7 +5,7 @@
         </li>
         <li v-for="edu in education" v-bind:key="edu.id" class="collection-item">
             <div class="chip">{{edu.edu_name}}</div>
-            {{edu.edu_id}} : {{edu.edu_field}} : {{edu.edu_start}} - {{edu.edu_end}} | {{edu.edu_desc}}
+            {{edu.edu_id}} : {{edu.edu_field}} : {{edu.edu_start}} - {{edu.edu_end}} | {{edu.edu_location}}
             <router-link class="secondary-content" v-bind:to="{name: 'view-education',params: {edu_id: edu.edu_id}}">
                 <i class="fa fa-eye"></i>
             </router-link>
@@ -40,7 +40,7 @@
                         'edu_field' : doc.data().edu_field,
                         'edu_start' : doc.data().edu_start,
                         'edu_end' : doc.data().edu_end,
-                        'edu_desc' : doc.data().edu_desc,
+                        'edu_location' : doc.data().edu_location,
                     }
                     this.education.push(data)
                 })
