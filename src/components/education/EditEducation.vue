@@ -20,10 +20,10 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="text" v-model="edu_start" required>
+                        <datepicker placeholder="Start Date" type="text" v-model="edu_start" required />
                     </div>
                     <div class="input-field col s6">
-                        <input type="text" v-model="edu_end" required>
+                        <datepicker placeholder="End Date" v-model="edu_end" type="text" required />
                     </div>
                 </div>
                 <div class="row">
@@ -32,7 +32,6 @@
                     </div>
                 </div>
                 <button type="submit" class="btn">Submit</button>
-                <!-- <router-link to="/" class="btn">Cancel</router-link> -->
                 <router-link class="btn" v-bind:to="{name: 'view-education'}">
                     Cancel
                 </router-link>
@@ -42,7 +41,9 @@
 </template>
 
 <script>
-    import db from './../firebase/firebaseInit'
+    import db from './../firebase/firebaseInit';
+    import Datepicker from 'vuejs-datepicker';
+    import moment from 'moment';
     export default {
         name: 'edit-education',
         data() {
@@ -98,8 +99,8 @@
                             edu_id: this.edu_id,
                             edu_name: this.edu_name,
                             edu_field: this.edu_field,
-                            edu_start: this.edu_start,
-                            edu_end: this.edu_end,
+                            edu_start: moment(this.edu_start).format('YYYY-MM-DD'),
+                            edu_end: moment(this.edu_end).format('YYYY-MM-DD'),
                             edu_location: this.edu_location,
                         })
                         .then(() => {
@@ -110,6 +111,9 @@
                     })
                 })
             }
+        },
+        components: {
+            Datepicker
         }
     }
 </script>

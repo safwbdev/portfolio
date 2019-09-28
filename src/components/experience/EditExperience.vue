@@ -20,10 +20,10 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="text" v-model="work_start" required>
+                        <datepicker placeholder="Start Date" type="text" v-model="work_start" required />
                     </div>
                     <div class="input-field col s6">
-                        <input type="text" v-model="work_end" required>
+                        <datepicker placeholder="End Date" v-model="work_end" type="text" required />
                     </div>
                 </div>
                 <div class="row">
@@ -41,7 +41,9 @@
 </template>
 
 <script>
-    import db from './../firebase/firebaseInit'
+    import db from './../firebase/firebaseInit';
+    import Datepicker from 'vuejs-datepicker';
+    import moment from 'moment';
     export default {
         name: 'edit-experience',
         data() {
@@ -97,8 +99,8 @@
                             work_id: this.work_id,
                             work_name: this.work_name,
                             work_position: this.work_position,
-                            work_start: this.work_start,
-                            work_end: this.work_end,
+                            work_start: moment(this.work_start).format('YYYY-MM-DD'),
+                            work_end: moment(this.work_end).format('YYYY-MM-DD'),
                             work_desc: this.work_desc,
                         })
                         .then(() => {
@@ -109,6 +111,9 @@
                     })
                 })
             }
+        },
+        components: {
+            Datepicker
         }
     }
 </script>
