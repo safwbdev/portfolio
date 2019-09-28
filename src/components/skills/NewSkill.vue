@@ -23,7 +23,7 @@
                 <div class="row">
                     <label>Skill Type</label>
                     <div class="input-field col s12">
-                        <select v-model="skill_type" aria-placeholder="lol">
+                        <select v-model="skill_type">
                             <option selected="selected" disabled>== Select Skill Type ==</option>
                             <option v-for="option in options" 
                             v-bind:value="option.value" 

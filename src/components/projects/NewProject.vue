@@ -25,14 +25,29 @@
                         <input type="text" v-model="project_tools" required>
                         <label>Project Tools</label>
                     </div>
+                </div>
+                 <div class="row">
+                    <label>Skill Type</label>
                     <div class="input-field col s12">
-                        <input type="text" v-model="githubUrl" required>
+                        <select v-model="project_type">
+                            <option selected="selected" disabled>== Select Skill Type ==</option>
+                            <option v-for="option in options" 
+                            v-bind:value="option.value" 
+                            v-bind:key="option.key">
+                                {{ option.text }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" v-model="githubUrl">
                         <label>Github Link</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="demoUrl" required>
+                        <input type="text" v-model="demoUrl" >
                         <label>Demo Link</label>
                     </div>
                 </div>
@@ -47,13 +62,19 @@
     import db from './../firebase/firebaseInit'
     export default {
         name: 'new-project',
-        
         data() {
             return {
+
+                selected: 'A',
+                options: [
+                    { text: 'Personal', value: 'Personal' },
+                    { text: 'Client', value: 'Client' }
+                ],
                 project_id: null,
                 project_name: null,
                 project_desc: null,
                 project_tools: null,
+                project_type: null,
                 githubUrl: null,
                 demoUrl: null,
             }
@@ -75,8 +96,11 @@
                     project_name: this.project_name,
                     project_desc: this.project_desc,
                     project_tools: this.project_tools,
-                    githubUrl: this.githubUrl,
-                    demoUrl: this.demoUrl,
+                    project_type: this.project_type,
+                    githubUrl: ((this.githubUrl == null) ? null : this.githubUrl),
+                    demoUrl: ((this.demoUrl == null) ? null : this.demoUrl),
+                    // githubUrl: this.githubUrl,
+                    // demoUrl: this.demoUrl,
                 })
                 .then(docRef => this.$router.push('/'))
                 .catch(error => console.log(err))
@@ -84,3 +108,8 @@
         }
     }
 </script>
+<style scoped>
+select{
+    display: block;
+}
+</style>

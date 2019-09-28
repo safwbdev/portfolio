@@ -10,7 +10,7 @@
                 <h3>{{designation}}</h3>
             </div>
             <div class="col s12" style="border:1px solid blue;">
-                <div v-for="option in contact" v-bind:value="option.value" v-bind:key="option.key" class="col xl3 l3 m6 s12">
+                <div v-for="option in contact" v-bind:value="option.value" v-bind:key="option.key" class="col xl4 l4 m6 s12">
                     <a v-bind:href="option.link">          
                         <fa-icon :icon="[option.icon1 , option.icon2]" /> {{ option.text }}
                     </a>
