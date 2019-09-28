@@ -1,21 +1,40 @@
 <template>
     <div class="section">
-        <h5>Education</h5>
+        <h4>Education</h4>
         <div class="row">
             <div 
                 v-for="edu in education" 
                 v-bind:key="edu.id" 
-                class="row col xl12 l12 m12 s12">
+                class="school row col xl12 l12 m12 s12">
                 <!-- <h6>{{edu.edu_name}}</h6>
                 <span class="bold">{{edu.edu_field}}</span>
                 <div>{{edu.edu_start}} - {{edu.edu_end}}</div>
                 <div>{{edu.edu_desc}}</div> -->
-                <div>{{edu.edu_end}} | {{edu.edu_field}}</div>
-                <div>{{edu.edu_name}} | {{edu.edu_location}}</div>
+                <div><span class="grad-year">{{edu.edu_end}}</span> | <span class="field">{{edu.edu_field}}</span></div>
+                <div><span class="name">{{edu.edu_name}}</span> | <span class="location">{{edu.edu_location}}</span></div>
             </div>
         </div>
     </div>
 </template>
+
+
+<style scoped>
+.school{
+    /* border: 1px solid red; */
+    line-height: 1.8em;
+}
+.school .grad-year{
+    font-weight: bold;
+    font-size: 16px;
+}
+.school .field{
+    font-size: 16px;
+
+}
+.school .name{
+    font-weight: bold;
+}
+</style>
 
 <script>
     import db from './../firebase/firebaseInit'

@@ -1,17 +1,30 @@
 <template>
     <div class="section">
-        <h5>Work Experience</h5>
+        <h4>Work Experience</h4>
         <div class="row">
-            <div v-for="work in experience" v-bind:key="work.id" class="row col xl12 l12 m12 s12">
-                <div>{{work.work_position}} | {{work.work_start}} - {{work.work_end}}</div>
-                <div>{{work.work_name}} | {{work.work_location}}</div>
-                <div>{{work.work_desc}}</div> 
+            <div v-for="work in experience" v-bind:key="work.id" class="work row col xl12 l12 m12 s12">
+                <div><span class="position">{{work.work_position}}</span> | <span class="duration">{{work.work_start}} - {{work.work_end}}</span></div>
+                <div><span class="company">{{work.work_name}}</span> | <span class="">{{work.work_location}}</span></div>
+                <div class="desc">{{work.work_desc}}</div> 
             </div>
         </div>
     </div>
 </template>
 
+<style scoped>
+.work{
+    /* border:1px solid red; */
+    line-height: 1.8em;
+}
+.work .position{
+    font-weight: bold;
+    font-size: 18px;
+}
+.work .company{
+    font-weight: bold;
 
+}
+</style>
 <script>
     import db from './../firebase/firebaseInit';
     import moment from 'moment';
