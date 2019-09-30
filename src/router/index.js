@@ -13,6 +13,7 @@ import ViewEducation from '@/components/education/ViewEducation'
 import EditEducation from '@/components/education/EditEducation'
 import ViewProject from '@/components/projects/ViewProject'
 import NewProject from '@/components/projects/NewProject'
+import EditProject from '@/components/projects/EditProject'
 
 Vue.use(Router)
 
@@ -63,6 +64,11 @@ export default new Router({
       path: '/edit/:work_id',
       name: 'edit-experience',
       component: EditExperience
+    },
+    {
+      path: '/edit/:project_id',
+      name: 'edit-project',
+      component: EditProject
     },
     {
       path: '/view-skill/:skill_id',

@@ -1,34 +1,39 @@
 <template>
     <div id="edit-education">
-        <h3>Edit Education</h3>
+        <h3>Edit Project</h3>
         <div class="row">
             <form @submit.prevent="updateSkill" class="col s12">
                 <div class="row">
                     <div class="input-field col s12">
-                        <input disabled type="text" v-model="edu_id" required hidden>
+                        <input disabled type="text" v-model="project_id" required hidden>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="edu_name" required>
+                        <input type="text" v-model="project_name" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="edu_field" required>
+                        <input type="text" v-model="project_desc" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
-                        <input type="text" v-model="edu_start" required>
+                        <input type="text" v-model="project_tools" required>
                     </div>
                     <div class="input-field col s6">
-                        <input type="text" v-model="edu_end" required>
+                        <input type="text" v-model="project_type" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="edu_desc" required>
+                        <input type="text" v-model="githubUrl" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" v-model="demoUrl" required>
                     </div>
                 </div>
                 <button type="submit" class="btn">Submit</button>
@@ -44,29 +49,31 @@
 <script>
     import db from './../firebase/firebaseInit'
     export default {
-        name: 'edit-education',
+        name: 'edit-project',
         data() {
             return {
-                edu_id: null,
-                edu_name: null,
-                edu_field: null,
-                edu_start: null,
-                edu_end: null,
-                edu_desc: null,
+                project_id: null,
+                project_name: null,
+                project_desc: null,
+                project_tools: null,
+                project_type: null,
+                githubUrl: null,
+                demoUrl: null,
             }
         },
         beforeRouteEnter (to,from,next) {
-            db.collection('education').where('edu_id',
-            '==', to.params.edu_id).get()
+            db.collection('projects').where('project_id',
+            '==', to.params.project_id).get()
             .then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     next(vm => {
-                        vm.edu_id = doc.data().edu_id
-                        vm.edu_name = doc.data().edu_name
-                        vm.edu_field = doc.data().edu_field
-                        vm.edu_start = doc.data().edu_start
-                        vm.edu_end = doc.data().edu_end
-                        vm.edu_desc = doc.data().edu_desc
+                        vm.project_id = doc.data().project_id
+                        vm.project_name = doc.data().project_name
+                        vm.project_desc = doc.data().project_desc
+                        vm.project_tools = doc.data().project_tools
+                        vm.project_type = doc.data().project_type
+                        vm.githubUrl = doc.data().githubUrl
+                        vm.demoUrl = doc.data().demoUrl
                     })
                 })
             })
@@ -76,35 +83,37 @@
         },
         methods: {
             fetchData () {
-                db.collection('education').where
-                ('edu_id', '==', this.$route.params.edu_id).get()
+                db.collection('projects').where
+                ('project_id', '==', this.$route.params.project_id).get()
                 .then(querySnapshot => {
                     querySnapshot.forEach(doc => {
-                        this.edu_id = doc.data().edu_id
-                        this.edu_name = doc.data().edu_name
-                        this.edu_field = doc.data().edu_field
-                        this.edu_start = doc.data().edu_start
-                        this.edu_end = doc.data().edu_end
-                        this.edu_desc = doc.data().edu_desc
+                        this.project_id = doc.data().project_id
+                        this.project_name = doc.data().project_name
+                        this.project_desc = doc.data().project_desc
+                        this.project_tools = doc.data().project_tools
+                        this.project_type = doc.data().project_type
+                        this.githubUrl = doc.data().githubUrl
+                        this.demoUrl = doc.data().demoUrl
                     })
                 })
             },
             updateSkill () {
-                db.collection('education').where
-                ('edu_id', '==', this.$route.params.edu_id).get()
+                db.collection('projects').where
+                ('project_id', '==', this.$route.params.project_id).get()
                 .then(querySnapshot => {
                     querySnapshot.forEach(doc => {
                         doc.ref.update({
-                            edu_id: this.edu_id,
-                            edu_name: this.edu_name,
-                            edu_field: this.edu_field,
-                            edu_start: this.edu_start,
-                            edu_end: this.edu_end,
-                            edu_desc: this.edu_desc,
+                            project_id: this.project_id,
+                            project_name: this.project_name,
+                            project_desc: this.project_desc,
+                            project_tools: this.project_tools,
+                            project_type: this.project_type,
+                            githubUrl: this.githubUrl,
+                            demoUrl: this.demoUrl,
                         })
                         .then(() => {
                             this.$router.push({
-                                name: 'view-education', 
+                                name: 'view-project', 
                                 params: {edu_id: this.edu_id}})
                         })
                     })
