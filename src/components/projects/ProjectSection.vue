@@ -6,7 +6,7 @@
             <div 
                 v-for="edu in clientProjects" 
                 v-bind:key="edu.id" 
-                class="project row col xl6 l6 m12 s12">
+                class="project row col xl4 l4 m12 s12">
                 <h6>{{edu.project_name}}</h6>
                 <p class="desc">{{edu.project_desc}}</p>
                 <div class="tools">{{edu.project_tools}}</div>
@@ -19,7 +19,7 @@
                     <span v-if="edu.githubUrl != null && edu.demoUrl != null"> | </span>
                     <span v-if="edu.demoUrl != null">
                         <a v-bind:href="edu.demoUrl">
-                            <fa-icon :icon="['fas', 'globe']" /> Demo Link
+                            <fa-icon :icon="['fas', 'globe']" /> Visit Site
                         </a>
                     </span>
                 </div>
@@ -32,7 +32,7 @@
             <div 
                 v-for="edu in personalProjects" 
                 v-bind:key="edu.id" 
-                class="project row col xl6 l6 m12 s12">
+                class="project row col xl4 l4 m12 s12">
                 <h6>{{edu.project_name}}</h6>
                 <p class="desc">{{edu.project_desc}}</p>
                 <div class="tools">{{edu.project_tools}}</div>
