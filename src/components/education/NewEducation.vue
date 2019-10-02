@@ -1,42 +1,44 @@
 <template>
     <div id="new-education">
-        <h3>New Education</h3>
-        <div class="row">
-            <form @submit.prevent="saveEmployee" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input disabled type="text" v-model="edu_id" required hidden>
+        <div class="container">
+            <h3>New Education</h3>
+            <div class="row">
+                <form @submit.prevent="saveEmployee" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled type="text" v-model="edu_id" required hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="edu_name" required>
-                        <label>University Name</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="edu_name" required>
+                            <label>University Name</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="edu_field" required>
-                        <label>Field</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="edu_field" required>
+                            <label>Field</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <datepicker placeholder="Start Date" type="text" v-model="edu_start" required />
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <datepicker placeholder="Start Date" type="text" v-model="edu_start" required />
+                        </div>
+                        <div class="input-field col s6">
+                            <datepicker placeholder="End Date" v-model="edu_end" type="text" required />
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <datepicker placeholder="End Date" v-model="edu_end" type="text" required />
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="edu_desc" required>
+                            <label>Description</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="edu_desc" required>
-                        <label>Description</label>
-                    </div>
-                </div>
-                <button type="submit" class="btn">Submit</button>
-                <router-link to="/dashboard" class="btn">Cancel</router-link>
-            </form>
+                    <button type="submit" class="btn">Submit</button>
+                    <router-link to="/dashboard" class="btn">Cancel</router-link>
+                </form>
+            </div>
         </div>
     </div>
 </template>

@@ -6,12 +6,14 @@
         <div class="divider"></div>
         <ProjectSection />
         <div class="divider"></div>
-        <div class="row">
-            <div class="row col xl6 l6 m12 s12">
-                <ExperienceSection />
-            </div>
-            <div class="row col xl6 l6 m12 s12">
-                <EducationSection />
+        <div class="container">
+            <div class="row">
+                <div class="row col xl6 l6 m12 s12">
+                    <ExperienceSection />
+                </div>
+                <div class="row col xl6 l6 m12 s12">
+                    <EducationSection />
+                </div>
             </div>
         </div>
         <div class="divider"></div>

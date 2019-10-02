@@ -1,57 +1,59 @@
 <template>
     <div class="section">
-        <h4>Portfolio</h4>
-        <h5>Client Projects<sup>*</sup></h5>
-        <div class="row">
-            <div 
-                v-for="edu in clientProjects" 
-                v-bind:key="edu.id" 
-                class="project row col xl4 l4 m12 s12">
-                <h6>{{edu.project_name}}</h6>
-                <p class="desc">{{edu.project_desc}}</p>
-                <div class="tools">{{edu.project_tools}}</div>
-                <div class="links">
-                    <span v-if="edu.githubUrl != null">
-                        <a v-bind:href="edu.githubUrl">
-                            <fa-icon :icon="['fab', 'github']" /> Github Link
-                        </a>
-                    </span>
-                    <span v-if="edu.githubUrl != null && edu.demoUrl != null"> | </span>
-                    <span v-if="edu.demoUrl != null">
-                        <a v-bind:href="edu.demoUrl">
-                            <fa-icon :icon="['fas', 'globe']" /> Visit Site
-                        </a>
-                    </span>
+        <div class="container">
+            <h4>Portfolio</h4>
+            <h5>Client Projects<sup>*</sup></h5>
+            <div class="row">
+                <div 
+                    v-for="edu in clientProjects" 
+                    v-bind:key="edu.id" 
+                    class="project row col xl4 l4 m12 s12">
+                    <h6>{{edu.project_name}}</h6>
+                    <p class="desc">{{edu.project_desc}}</p>
+                    <div class="tools">{{edu.project_tools}}</div>
+                    <div class="links">
+                        <span v-if="edu.githubUrl != null">
+                            <a v-bind:href="edu.githubUrl">
+                                <fa-icon :icon="['fab', 'github']" /> Github Link
+                            </a>
+                        </span>
+                        <span v-if="edu.githubUrl != null && edu.demoUrl != null"> | </span>
+                        <span v-if="edu.demoUrl != null">
+                            <a v-bind:href="edu.demoUrl">
+                                <fa-icon :icon="['fas', 'globe']" /> Visit Site
+                            </a>
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-        <h5>Personal Projects</h5>
-        </div>
-        <div class="row">
-            <div 
-                v-for="edu in personalProjects" 
-                v-bind:key="edu.id" 
-                class="project row col xl4 l4 m12 s12">
-                <h6>{{edu.project_name}}</h6>
-                <p class="desc">{{edu.project_desc}}</p>
-                <div class="tools">{{edu.project_tools}}</div>
-                <div class="links">
-                    <span v-if="edu.githubUrl != null">
-                        <a v-bind:href="edu.githubUrl">
-                            <fa-icon :icon="['fab', 'github']" /> Github Link
-                        </a>
-                    </span>
-                    <span v-if="edu.githubUrl != null && edu.demoUrl != null"> | </span>
-                    <span v-if="edu.demoUrl != null">
-                        <a v-bind:href="edu.demoUrl">
-                            <fa-icon :icon="['fas', 'globe']" /> Demo Link
-                        </a>
-                    </span>
-                </div>
+            <div class="row">
+            <h5>Personal Projects</h5>
             </div>
+            <div class="row">
+                <div 
+                    v-for="edu in personalProjects" 
+                    v-bind:key="edu.id" 
+                    class="project row col xl4 l4 m12 s12">
+                    <h6>{{edu.project_name}}</h6>
+                    <p class="desc">{{edu.project_desc}}</p>
+                    <div class="tools">{{edu.project_tools}}</div>
+                    <div class="links">
+                        <span v-if="edu.githubUrl != null">
+                            <a v-bind:href="edu.githubUrl">
+                                <fa-icon :icon="['fab', 'github']" /> Github Link
+                            </a>
+                        </span>
+                        <span v-if="edu.githubUrl != null && edu.demoUrl != null"> | </span>
+                        <span v-if="edu.demoUrl != null">
+                            <a v-bind:href="edu.demoUrl">
+                                <fa-icon :icon="['fas', 'globe']" /> Demo Link
+                            </a>
+                        </span>
+                    </div>
+                </div>
 
-        <span class="tnc">*Projects shown are displayed with persmission from the original owners</span>
+            <span class="tnc">*Projects shown are displayed with persmission from the original owners</span>
+            </div>
         </div>
     </div>
 </template>

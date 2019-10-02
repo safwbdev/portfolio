@@ -1,5 +1,5 @@
 <template>
-    <div id="edit-skill">
+    <div class="container">
         <h3>Edit Skill</h3>
         <div class="row">
             <form @submit.prevent="updateSkill" class="col s12">

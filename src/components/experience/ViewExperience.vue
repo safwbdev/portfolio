@@ -1,5 +1,5 @@
 <template>
-    <div id="view-experience">
+    <div class="container">
         <ul class="collection with-header">
             <li class="collection-header"><h4>{{work_name}}</h4></li>
             <li class="collection-item">Skill ID#: {{work_id}}</li>

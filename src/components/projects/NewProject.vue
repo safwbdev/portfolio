@@ -1,59 +1,61 @@
 <template>
     <div id="new-project">
-        <h3>New Project</h3>
-        <div class="row">
-            <form @submit.prevent="saveEmployee" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input disabled type="text" v-model="project_id" required hidden>
+        <div class="container">
+            <h3>New Project</h3>
+            <div class="row">
+                <form @submit.prevent="saveEmployee" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled type="text" v-model="project_id" required hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="project_name" required>
-                        <label>Project Name</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="project_name" required>
+                            <label>Project Name</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="project_desc" required>
-                        <label>Description</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="project_desc" required>
+                            <label>Description</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="project_tools" required>
-                        <label>Project Tools</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="project_tools" required>
+                            <label>Project Tools</label>
+                        </div>
                     </div>
-                </div>
-                 <div class="row">
-                    <label>Skill Type</label>
-                    <div class="input-field col s12">
-                        <select v-model="project_type">
-                            <option selected="selected" disabled>== Select Skill Type ==</option>
-                            <option v-for="option in options" 
-                            v-bind:value="option.value" 
-                            v-bind:key="option.key">
-                                {{ option.text }}
-                            </option>
-                        </select>
+                    <div class="row">
+                        <label>Skill Type</label>
+                        <div class="input-field col s12">
+                            <select v-model="project_type">
+                                <option selected="selected" disabled>== Select Skill Type ==</option>
+                                <option v-for="option in options" 
+                                v-bind:value="option.value" 
+                                v-bind:key="option.key">
+                                    {{ option.text }}
+                                </option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="githubUrl">
-                        <label>Github Link</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="githubUrl">
+                            <label>Github Link</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="demoUrl" >
-                        <label>Demo Link</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="demoUrl" >
+                            <label>Demo Link</label>
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="btn">Submit</button>
-                <router-link to="/dashboard" class="btn">Cancel</router-link>
-            </form>
+                    <button type="submit" class="btn">Submit</button>
+                    <router-link to="/dashboard" class="btn">Cancel</router-link>
+                </form>
+            </div>
         </div>
     </div>
 </template>

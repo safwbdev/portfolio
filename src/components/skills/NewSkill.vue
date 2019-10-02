@@ -1,46 +1,48 @@
 <template>
     <div id="new-skill">
-        <h3>New Skill</h3>
-        <div class="row">
-            <form @submit.prevent="saveEmployee" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input disabled type="text" v-model="skill_id" required hidden>
+        <div class="container">
+            <h3>New Skill</h3>
+            <div class="row">
+                <form @submit.prevent="saveEmployee" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled type="text" v-model="skill_id" required hidden>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="skill_name" required>
-                        <label>Skill Name</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="skill_name" required>
+                            <label>Skill Name</label>
+                        </div>
                     </div>
-                </div>
-                <!-- <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="skill_type" required>
+                    <!-- <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="skill_type" required>
+                            <label>Skill Type</label>
+                        </div>
+                    </div> -->
+                    <div class="row">
                         <label>Skill Type</label>
+                        <div class="input-field col s12">
+                            <select v-model="skill_type">
+                                <option selected="selected" disabled>== Select Skill Type ==</option>
+                                <option v-for="option in options" 
+                                v-bind:value="option.value" 
+                                v-bind:key="option.key">
+                                    {{ option.text }}
+                                </option>
+                            </select>
+                            <!-- <span>Selected: {{ selected }}</span> -->
+                        </div>
                     </div>
-                </div> -->
-                <div class="row">
-                    <label>Skill Type</label>
-                    <div class="input-field col s12">
-                        <select v-model="skill_type">
-                            <option selected="selected" disabled>== Select Skill Type ==</option>
-                            <option v-for="option in options" 
-                            v-bind:value="option.value" 
-                            v-bind:key="option.key">
-                                {{ option.text }}
-                            </option>
-                        </select>
-                        <!-- <span>Selected: {{ selected }}</span> -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                    <button type="submit" class="btn">Submit</button>
+                    <router-link to="/dashboard" class="btn">Cancel</router-link>
+                        </div>
                     </div>
-                </div>
-                 <div class="row">
-                    <div class="input-field col s12">
-                <button type="submit" class="btn">Submit</button>
-                <router-link to="/dashboard" class="btn">Cancel</router-link>
-                    </div>
-                 </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </template>

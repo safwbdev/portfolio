@@ -1,21 +1,23 @@
 <template>
-    <div class="section">
-        <div class="row">
-            <div class="col xl3 l3 m3 s12" >
-                <img v-bind:src="img" alt="" style="width:100%;">
-            </div>
-            <div class="col xl9 l9 m9 s12">
-            <div class="col s12">
-                <h1>{{fullName}}</h1>
-                <h3>{{designation}}</h3>
-            </div>
-            <div class="col s12" style="border:1px solid blue;">
-                <div v-for="option in contact" v-bind:value="option.value" v-bind:key="option.key" class="col xl4 l4 m6 s12">
-                    <a v-bind:href="option.link">          
-                        <fa-icon :icon="[option.icon1 , option.icon2]" /> {{ option.text }}
-                    </a>
+    <div class="section personal">
+        <div class="container">
+            <div class="row">
+                <div class="col xl3 l3 m3 s12" >
+                    <img v-bind:src="img" alt="" style="width:100%;">
                 </div>
-            </div>
+                <div class="col xl9 l9 m9 s12">
+                <div class="col s12">
+                    <h1>{{fullName}}</h1>
+                    <h3>{{designation}}</h3>
+                </div>
+                <div class="col s12" style="border:1px solid blue;">
+                    <div v-for="option in contact" v-bind:value="option.value" v-bind:key="option.key" class="col xl4 l4 m6 s12">
+                        <a v-bind:href="option.link">          
+                            <fa-icon :icon="[option.icon1 , option.icon2]" /> {{ option.text }}
+                        </a>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
@@ -65,3 +67,9 @@ export default {
     }
 }
 </script>
+
+<style>
+.section.personal{
+    background:cyan;
+}
+</style>

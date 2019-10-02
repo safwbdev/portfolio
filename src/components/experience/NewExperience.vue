@@ -1,49 +1,51 @@
 <template>
     <div id="new-experience">
-        <h3>New Work Experience</h3>
-        <div class="row">
-            <form @submit.prevent="saveEmployee" class="col s12">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input disabled type="text" v-model="work_id" required hidden>
-                        <!-- <label>Work ID</label> -->
+        <div class="container">
+            <h3>New Work Experience</h3>
+            <div class="row">
+                <form @submit.prevent="saveEmployee" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input disabled type="text" v-model="work_id" required hidden>
+                            <!-- <label>Work ID</label> -->
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="work_name" required>
-                        <label>Company Name</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="work_name" required>
+                            <label>Company Name</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="work_position" required>
-                        <label>Position</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="work_position" required>
+                            <label>Position</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <datepicker placeholder="Start Date" type="text" v-model="work_start" required />
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <datepicker placeholder="Start Date" type="text" v-model="work_start" required />
+                        </div>
+                        <div class="input-field col s6">
+                            <datepicker placeholder="End Date" v-model="work_end" type="text" required />
+                        </div>
                     </div>
-                    <div class="input-field col s6">
-                        <datepicker placeholder="End Date" v-model="work_end" type="text" required />
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea v-model="work_desc" required></textarea>
+                            <label>Description</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <textarea v-model="work_desc" required></textarea>
-                        <label>Description</label>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" v-model="work_location" required>
+                            <label>Location</label>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input type="text" v-model="work_location" required>
-                        <label>Location</label>
-                    </div>
-                </div>
-                <button type="submit" class="btn">Submit</button>
-                <router-link to="/dashboard" class="btn">Cancel</router-link>
-            </form>
+                    <button type="submit" class="btn">Submit</button>
+                    <router-link to="/dashboard" class="btn">Cancel</router-link>
+                </form>
+            </div>
         </div>
     </div>
 </template>

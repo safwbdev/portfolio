@@ -1,5 +1,5 @@
 <template>
-    <div id="view-education">
+    <div class="container">
         <ul class="collection with-header">
             <li class="collection-header"><h4>{{edu_name}}</h4></li>
             <li class="collection-item">ID#: {{edu_id}}</li>

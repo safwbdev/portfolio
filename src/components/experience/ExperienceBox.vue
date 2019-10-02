@@ -15,7 +15,6 @@
                 <i class="fa fa-plus"></i>
             </router-link>
         </li>
-        
     </ul>
 </template>
 

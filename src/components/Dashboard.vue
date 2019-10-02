@@ -1,11 +1,12 @@
 <template>
     <div id="dasboard">
-        
         <Personal />
-        <SkillsBox title="Skills" />
-        <EducationBox title="Education" />
-        <ExperienceBox title="Working Experience" />
-        <ProjectBox title="Projects" />
+        <div class="container">
+            <SkillsBox title="Skills" />
+            <EducationBox title="Education" />
+            <ExperienceBox title="Working Experience" />
+            <ProjectBox title="Projects" />
+        </div>
     </div>
 </template>
 
