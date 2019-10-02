@@ -11,26 +11,14 @@
                     <h3>{{designation}}</h3>
                 </div>
                 <div class="col s12 contact-details">
-                    <!-- <div v-for="option in contact" v-bind:value="option.value" v-bind:key="option.key" class="col xl6 l6 m6 s6">
-                        <a v-bind:href="option.link" class="" v-if="option.icon2 === 'phone'">          
-                            <fa-icon :icon="[option.icon1 , option.icon2]" /> <span class="hide-on-small-only">{{ option.text }}</span><span class="hide-on-med-and-up">Call me</span>
-                        </a>
-                        <a v-bind:href="option.link" class="" v-else-if="option.icon2 === 'envelope'">          
-                            <fa-icon :icon="[option.icon1 , option.icon2]" /> <span class="hide-on-small-only">{{ option.text }}</span><span class="hide-on-med-and-up">Email me</span>
-                        </a>
-                        <a v-bind:href="option.link" class="" v-else>
-                            <fa-icon :icon="[option.icon1 , option.icon2]" /> <span>{{ option.text }}</span>
-                        </a>
-
-                    </div> -->
                     <div v-for="option in contact" v-bind:value="option.value" v-bind:key="option.key" >
                         <div class="col xl6 l6 m6 s6" v-if="option.type === 'phone'">
-                            <a v-bind:href="option.link" class="" >          
+                            <a v-bind:href="option.link" target="_blank" >          
                                 <fa-icon :icon="[option.icon1 , option.icon2]" /> <span class="hide-on-small-only">{{ option.text }}</span><span class="hide-on-med-and-up">Call me</span>
                             </a>
                         </div>
                         <div class="col xl6 l6 m6 s6" v-else-if="option.type === 'email'">
-                            <a v-bind:href="option.link" class="" >          
+                            <a v-bind:href="option.link" target="_blank" >          
                                 <fa-icon :icon="[option.icon1 , option.icon2]" /> <span class="hide-on-small-only">{{ option.text }}</span><span class="hide-on-med-and-up">Email me</span>
                             </a>
                         </div>
@@ -40,7 +28,7 @@
                             </a>
                         </div>
                         <div class="col xl6 l6 m6 s6" v-else>
-                        <a v-bind:href="option.link" >
+                        <a v-bind:href="option.link" target="_blank" >
                             <fa-icon :icon="[option.icon1 , option.icon2]" /> <span>{{ option.text }}</span>
                         </a>
                         </div>
@@ -105,7 +93,8 @@ export default {
 
 <style>
 .section.personal{
-    background-image: linear-gradient(to bottom, #4facfe 0%, #00f2fe 100%);
+    background-image: linear-gradient(to top, #4facfe 0%, #00f2fe 100%);
+    /* background-image: linear-gradient(to bottom, #22E1FF 0%, #1D8FE1 48%, #625EB1 100%); */
     padding: 0;
 }
 .section.personal h1{
@@ -128,7 +117,7 @@ export default {
     margin-bottom: 20px;
 }
 .section.personal .contact-details .col a{
-    color: #333333;
+    color: #000000;
     display: flex;
     align-items: center;
     justify-content: left

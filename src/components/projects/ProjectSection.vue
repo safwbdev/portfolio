@@ -2,7 +2,9 @@
     <div class="section">
         <div class="container">
             <h4>Portfolio</h4>
-            <h5>Client Projects<sup>*</sup></h5>
+            <div class="row">
+                <h5>Client Projects<sup>*</sup></h5>
+            </div>
             <div class="row">
                 <div 
                     v-for="edu in clientProjects" 
