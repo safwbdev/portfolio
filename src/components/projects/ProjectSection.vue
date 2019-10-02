@@ -1,7 +1,7 @@
 <template>
     <div class="section">
         <h4>Portfolio</h4>
-        <h5>Client Projects</h5>
+        <h5>Client Projects<sup>*</sup></h5>
         <div class="row">
             <div 
                 v-for="edu in clientProjects" 
@@ -51,6 +51,7 @@
                 </div>
             </div>
 
+        <span class="tnc">*Projects shown are displayed with persmission from the original owners</span>
         </div>
     </div>
 </template>
@@ -63,8 +64,15 @@
 .section h4{
     padding: 0;
 }
+.section h5 sup{
+    font-size: 14px !important;
+}
 .section h6{
     padding: 20px 0 10px 0;
+}
+.section .tnc{
+    font-size: 10px;
+    font-style: italic;
 }
 .chip svg{
 font-size: 1.2em;

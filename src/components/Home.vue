@@ -32,10 +32,6 @@
             EducationSection, 
             ExperienceSection,
             ProjectSection,
-        },
-        data() {
-            return {}
-        },
-        created () {}
+        }
     }
 </script>

@@ -84,7 +84,7 @@ font-size: 1.2em;
             }
         },
         created () {
-            db.collection('skills').orderBy('skill_id', 'asc').get().then(querysnapshot => {
+            db.collection('skills').orderBy('skill_name', 'asc').get().then(querysnapshot => {
                 querysnapshot.forEach(doc => {
                     // console.log(doc.id);
                     const data = {
