@@ -2,10 +2,10 @@
     <div class="section personal">
         <div class="container">
             <div class="row">
-                <div class="col xl3 l3 m3 s12 profile-pic" >
-                    <img v-bind:src="img" alt="" style="width:100%;">
+                <div class="col xl3 l3 m12 s12 profile-pic" >
+                    <img v-bind:src="img" alt="" >
                 </div>
-                <div class="col xl9 l9 m9 s12">
+                <div class="col xl9 l9 m12 s12">
                 <div class="col s12">
                     <h1>{{fullName}}</h1>
                     <h3>{{designation}}</h3>
@@ -30,9 +30,9 @@
                             </a>
                         </div>
                         <div class="col xl6 l6 m6 s6" v-else-if="option.type === 'email'">
-                        <a v-bind:href="option.link" class="" >          
-                            <fa-icon :icon="[option.icon1 , option.icon2]" /> <span class="hide-on-small-only">{{ option.text }}</span><span class="hide-on-med-and-up">Email me</span>
-                        </a>
+                            <a v-bind:href="option.link" class="" >          
+                                <fa-icon :icon="[option.icon1 , option.icon2]" /> <span class="hide-on-small-only">{{ option.text }}</span><span class="hide-on-med-and-up">Email me</span>
+                            </a>
                         </div>
                         <div class="col xl12 l12 m12 s12 address" v-else-if="option.type === 'address'">
                             <a>          
@@ -118,6 +118,7 @@ export default {
 .section.personal .profile-pic img{
     border-radius: 50%;
     margin: 2.8rem 0 1.68rem 0;
+    width: 100%;
 }
 .section.personal .contact-details{
     /* border: 1px solid red; */
@@ -186,5 +187,20 @@ export default {
         background: #ffffff;
     }
     
+}
+@media only screen and (max-width: 999px) {
+
+.section.personal .profile-pic{
+    text-align: center;
+}
+.section.personal .profile-pic img{
+    width: 40%;
+}
+.section.personal h1{
+    text-align: center;
+}
+.section.personal h3{
+    text-align: center;
+}
 }
 </style>
