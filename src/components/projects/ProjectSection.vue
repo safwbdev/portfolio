@@ -7,7 +7,7 @@
                 <div 
                     v-for="edu in clientProjects" 
                     v-bind:key="edu.id" 
-                    class="project row col xl4 l4 m12 s12">
+                    class="project row col xl4 l4 m6 s12">
                     <h6>{{edu.project_name}}</h6>
                     <p class="desc">{{edu.project_desc}}</p>
                     <div class="tools">{{edu.project_tools}}</div>
@@ -25,15 +25,20 @@
                         </span>
                     </div>
                 </div>
+                <div class="col xl12 l12 m12 s12">
+                    <span class="tnc">*Projects shown are displayed with persmission from the original owners</span>
+                </div>
             </div>
             <div class="row">
-            <h5>Personal Projects</h5>
+                <div class="col xl12 l12 m12 s12">
+                    <h5>Personal Projects</h5>
+                </div>
             </div>
             <div class="row">
                 <div 
                     v-for="edu in personalProjects" 
                     v-bind:key="edu.id" 
-                    class="project row col xl4 l4 m12 s12">
+                    class="project row col xl4 l4 m6 s12">
                     <h6>{{edu.project_name}}</h6>
                     <p class="desc">{{edu.project_desc}}</p>
                     <div class="tools">{{edu.project_tools}}</div>
@@ -43,7 +48,7 @@
                                 <fa-icon :icon="['fab', 'github']" /> Github Link
                             </a>
                         </span>
-                        <span v-if="edu.githubUrl != null && edu.demoUrl != null"> | </span>
+                        <span v-if="edu.githubUrl != null && edu.demoUrl != null" class="splitter"> | </span>
                         <span v-if="edu.demoUrl != null">
                             <a v-bind:href="edu.demoUrl">
                                 <fa-icon :icon="['fas', 'globe']" /> Demo Link
@@ -52,7 +57,6 @@
                     </div>
                 </div>
 
-            <span class="tnc">*Projects shown are displayed with persmission from the original owners</span>
             </div>
         </div>
     </div>
@@ -92,6 +96,26 @@ font-size: 1.2em;
 }
 .project .desc{
     color:red;
+}
+
+
+@media only screen and (max-width: 768px) {
+.project{
+    text-align: center;
+}
+.project .links a{
+    border: 1px solid red;
+    background: red;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+    display: inline-block;
+    margin: 10px 0;;
+}
+.project .links .splitter{
+    display: none;
+}
+
 }
 </style>
 <script>
