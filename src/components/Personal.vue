@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col xl3 l3 m12 s12 profile-pic" >
-                    <img v-bind:src="img" alt="" >
+                    <img v-bind:src="image" alt="" >
                 </div>
                 <div class="col xl9 l9 m12 s12">
                 <div class="col s12">
@@ -40,7 +40,7 @@
         </div>
         <div class="about-me">
             <div class="container">
-            <p>{{abouttext}}</p>
+            <p>{{desc}}</p>
         </div>
         </div>
     </div>
@@ -57,12 +57,12 @@ export default {
             fullName: null,
             designation: null,
             dob: null,
+            desc: null,
             email: null,
             fName: null,
             lName: null,
             tel: null,
-            img: 'https://previews.123rf.com/images/eugenesergeev/eugenesergeev1605/eugenesergeev160500180/56871195-bearded-man-smoking-cigar-outdoor-square-portrait-with-selective-focus.jpg',
-            abouttext:"This is your world. Didn't you know you had that much power? You can move mountains. You can do anything. It's almost like something out of a fairytale book. Clouds are free. They just float around the sky all day and have fun. We spend so much of our life looking - but never seeing. Fluff it up a little and hypnotize it.",
+            image: null,
             contact: [
                 { type:'github', icon1: 'fab', icon2: 'github', link: null, text: 'Github' },
                 { type:'linkedin', icon1: 'fab', icon2: 'linkedin', link: null, text: 'Linkedin' },
@@ -77,6 +77,8 @@ export default {
             querysnapshot.forEach(doc => {
                 this.fullName = doc.data().fName + ' ' + doc.data().mName + ' ' +doc.data().lName
                 this.dob = doc.data().dob
+                this.desc = doc.data().desc
+                this.image = doc.data().image
                 this.designation = doc.data().designation
                 this.contact[0].link = doc.data().githubUrl
                 this.contact[1].link = doc.data().linkedinUrl

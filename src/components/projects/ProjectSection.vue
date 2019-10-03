@@ -28,12 +28,12 @@
                     </div>
                 </div>
                 <div class="col xl12 l12 m12 s12">
-                    <span class="tnc">*Projects shown are displayed with persmission from the original owners</span>
+                    <span class="tnc">* Projects shown are displayed with persmission from the original owners</span>
                 </div>
             </div>
             <div class="row">
                 <div class="col xl12 l12 m12 s12">
-                    <h5>Personal Projects</h5>
+                    <h5>Personal Projects<sup>**</sup></h5>
                 </div>
             </div>
             <div class="row">
@@ -58,7 +58,9 @@
                         </span>
                     </div>
                 </div>
-
+                <div class="col xl12 l12 m12 s12">
+                    <span class="tnc">** Just stuff I do for fun!</span>
+                </div>
             </div>
         </div>
     </div>
