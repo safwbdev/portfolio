@@ -28,12 +28,12 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="githubUrl">
+                        <input type="text" v-model="githubUrl" placeholder="github">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s12">
-                        <input type="text" v-model="demoUrl">
+                        <input type="text" v-model="demoUrl" placeholder="demo">
                     </div>
                 </div>
                 <button type="submit" class="btn">Submit</button>
@@ -109,7 +109,7 @@
                             project_tools: this.project_tools,
                             project_type: this.project_type,
                             githubUrl: ((this.githubUrl == null || this.githubUrl == "") ? null : this.githubUrl),
-                            demoUrl: ((this.demoUrl == null) ? null : this.demoUrl),
+                            demoUrl: ((this.demoUrl == null || this.demoUrl == "") ? null : this.demoUrl),
                         })
                         .then(() => {
                             this.$router.push({

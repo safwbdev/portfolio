@@ -1,18 +1,22 @@
 <template>
-    <nav>
-        <div class="nav-wrapper">
-            <div class="container">
-                <!-- <router-link to="/" class="brand-logo">My Stats</router-link> -->
-                <ul v-for="nav in navLinks.slice().reverse()" v-bind:key="nav.id" id="nav-mobile" class="right hide-on-med-and-down">
-                    <li>
-                        <router-link v-bind:to="nav.uri">
-                            {{nav.label}}
-                        </router-link>
-                    </li>
-                </ul>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <div class="container">
+                    <!-- <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li class="brand-logo">Hello there!</li>
+                    </ul>                              -->
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li v-for="nav in navLinks.slice()" v-bind:key="nav.id">
+                            <router-link v-bind:to="nav.uri">
+                                {{nav.label}}
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </template>
 <!--
 <style>
@@ -38,8 +42,14 @@ export default {
             navLinks: [
                 {label:'Home', uri: '/'},
                 {label:'Dashboard', uri: '/dashboard'},
-                // {label:'Education', uri: 'education'},
-                // {label:'Work Experience', uri: 'experience'},
+            ],
+
+            scrollLinks: [
+                {label:'About Me', uri: '#intro'},
+                {label:'Portfolio', uri: '#portfolio'},
+                {label:'Skills', uri: '#skills'},
+                {label:'Experience', uri: '#experience'},
+                {label:'Education', uri: '#education'},
             ]
         }
     }
