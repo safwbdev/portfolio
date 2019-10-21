@@ -97,12 +97,10 @@
                     project_id: this.project_id,
                     project_name: this.project_name,
                     project_desc: this.project_desc,
-                    project_tools: this.project_tools,
+                    project_tools: ((this.project_tools == null) ? null : [this.project_tools]),
                     project_type: this.project_type,
                     githubUrl: ((this.githubUrl == null) ? null : this.githubUrl),
                     demoUrl: ((this.demoUrl == null) ? null : this.demoUrl),
-                    // githubUrl: this.githubUrl,
-                    // demoUrl: this.demoUrl,
                 })
                 .then(docRef => this.$router.push('/'))
                 .catch(error => console.log(err))

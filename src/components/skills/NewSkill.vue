@@ -53,8 +53,6 @@
         name: 'new-employee',
         data() {
             return {
-                // colectionID: [],
-
                 selected: 'A',
                 options: [
                     { text: 'Essentials', value: 'Essentials' },
@@ -70,7 +68,7 @@
                 skill_id: null,
                 skill_name: null,
                 skill_type: null,
-                skill_icon: 'fas::code',
+                skill_icon: ['fas','code'],
             }
         },
         beforeRouteEnter (to,from,next) {
